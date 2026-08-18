@@ -188,7 +188,7 @@ force_ordering(delay: %{:"$kind" => :delayed}, until: %{:"$kind" => :continue})
 
 ## Examples
 
-The [`examples/`](examples) directory has runnable, self-contained scripts. Each
+The [`examples/`](https://github.com/edgurgel/snabbkaffex/tree/main/examples) directory has runnable, self-contained scripts. Each
 one uses `Mix.install/2`, so you can run it straight from a checkout with no
 project setup:
 
@@ -196,11 +196,11 @@ project setup:
 elixir examples/get_or_compute_race.exs
 ```
 
-* [`get_or_compute_race.exs`](examples/get_or_compute_race.exs) — a memoizing
+* [`get_or_compute_race.exs`](https://github.com/edgurgel/snabbkaffex/blob/main/examples/get_or_compute_race.exs) — a memoizing
   cache with a check-then-act race: two concurrent callers can both miss and
   both run the expensive computation. `force_ordering` pins the one bad
   interleaving so the bug reproduces on **every** run.
-* [`retry_double_charge.exs`](examples/retry_double_charge.exs) — an
+* [`retry_double_charge.exs`](https://github.com/edgurgel/snabbkaffex/blob/main/examples/retry_double_charge.exs) — an
   at-least-once job that charges a card and then acks. If the process dies in
   the window between the two, the retry charges again. `inject_crash` with
   `recover_after: 1` kills the first attempt at exactly that trace point (then
